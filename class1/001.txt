@@ -1,0 +1,24 @@
+
+对vuejs进行相关的学习
+    vuejs对低版本的ie兼容性不好，ie >=9
+
+
+需要实例化new Vue();
+vue：
+    在html中书写结构
+    在script中，实例化vue，vm = new Vue()，在其中，放置el：选择器，就是实例化的区域，data： 数据交互放置
+
+常用指令：
+    v-model：使用在表单元素中，双向数据绑定,
+    data中，可以放置任何类型
+
+    v-for:循环遍历，（item，index）在数组arr中，
+        当在json中遍历时，（value，key，index）===> {{index}}--{{key}}：{{value}}
+
+    事件：v-on 简写：@ v-on:click === @click
+        methods: {}  函数方法，放置在此！
+        v-on(@):click/dblclick/mousedown/mouseover...
+        v-if&v-show:
+            v-if: 需要判断数据的来源，进行相关的render
+            v-show：仅仅是css的显示与隐藏
+
