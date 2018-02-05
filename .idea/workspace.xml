@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="805fcb01-0a7c-429a-aa16-3035b0918299" name="默认" comment=" 0">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toDoList/index.html" afterPath="$PROJECT_DIR$/toDoList/index.html" />
-    </list>
+    <list default="true" readonly="true" id="805fcb01-0a7c-429a-aa16-3035b0918299" name="默认" comment=" 0" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,8 +18,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/toDoList/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="78" column="14" lean-forward="true" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
+            <state relative-caret-position="189">
+              <caret line="72" column="46" lean-forward="true" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
               <folding>
                 <element signature="e#4501#4508#1" expanded="true" />
               </folding>
@@ -300,12 +297,12 @@
       <updated>1517454623648</updated>
       <workItem from="1517454626338" duration="14665000" />
       <workItem from="1517533685917" duration="21043000" />
-      <workItem from="1517793342373" duration="15117000" />
+      <workItem from="1517793342373" duration="15542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50825000" />
+    <option name="totallyTimeSpent" value="51250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -479,8 +476,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/toDoList/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="78" column="14" lean-forward="true" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
+        <state relative-caret-position="189">
+          <caret line="72" column="46" lean-forward="true" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
           <folding>
             <element signature="e#4501#4508#1" expanded="true" />
           </folding>
