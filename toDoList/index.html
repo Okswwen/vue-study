@@ -20,26 +20,65 @@
     <meta name="description" itemprop="description" content="这是要分享的内容"/>
     <!-- css -->
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el: '#box',
+                data: {
+                    myData:[],
+                    username: '',
+                    age: '',
+                    currentBox: -1
+                },
+                methods: {
+                    add() {
+                        if(this.username === null || this.username === undefined || this.age === null || this.age === undefined) return false;
+                        this.myData.push({
+                            name: this.username,
+                            age: this.age
+                        });
+                        this.username = null;
+                        this.age = null;
+                    },
+                    deleted(e) {
+
+                    },
+                    deletedMsg(e) {
+                        console.log(e);
+                        this.myData.splice(e,1)
+                    },
+                    deletedAll() {
+                        this.myData = '';
+                    }
+            }
+            })
+        }
+    </script>
 
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="box" v-cloak>
     <form action="#" role="form">
         <div class="form-group">
             <label for="username">用户名：</label>
-            <input type="text" id="username" class="form-control" placeholder="输入用户名：">
+            <input type="text" id="username" class="form-control" placeholder="输入用户名：" v-model="username">
         </div>
         <div class="form-group">
             <label for="age">年龄：</label>
-            <input type="text" id="age" class="form-control" placeholder="输入年龄：">
+            <input type="text" id="age" class="form-control" placeholder="输入年龄：" v-model="age">
         </div>
         <div class="form-group">
-            <input type="button" class="btn btn-primary" value="提交">
+            <input type="button" class="btn btn-primary" value="提交" @click="add()">
             <input type="button" class="btn btn-danger" value="重置">
         </div>
     </form>
@@ -55,39 +94,36 @@
         </thead>
         <tfoot></tfoot>
         <tbody class="text-center">
-        <tr>
-            <td>1</td>
-            <td>blue</td>
-            <td>18</td>
+        <tr v-for="(item, index) in myData" :key="index">
+            <td>{{ index+1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.age}}</td>
             <td>
-                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#layer">删除</button>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#layer" @click="currentBox = index">删除</button>
             </td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td>white</td>
-            <td>28</td>
-            <td>
-                <button class="btn btn-primary btn-sm">删除</button>
-            </td>
-        </tr>
-        <tr>
+        <tr v-show="myData.length != 0">
             <td colspan="4">
-                <button class="btn btn-danger">全部删除</button>
+                <button class="btn btn-danger" @click="deletedAll()">全部删除</button>
             </td>
         </tr>
-        <tr v-if="false">
+        <tr v-if="myData.length === 0">
             <td colspan="4">
                 <p>暂无数据...</p>
             </td>
         </tr>
         </tbody>
     </table>
-    <div role="dialog" class="modal" id="layer">
+    <div role="dialog" class="modal fade" id="layer">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">确认删除吗？</h3>
+                    <button type="button" class="close" data-dismiss="modal"><span class="">&times;</span></button>
+                    <h4 class="modal-title">确认删除吗？</h4>
+                </div>
+                <div class="modal-body text-right">
+                    <button type="button" class="btn btn-sm" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-sm btn-danger" @click="deletedMsg(currentBox)" data-dismiss="modal">确认</button>
                 </div>
             </div>
         </div>
