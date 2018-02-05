@@ -1,0 +1,10 @@
+vue-事件：
+    事件对象--事件的默认行为
+        事件冒泡：.stop ===  ev.cancelBubble = true;使用效果一样，但是需要传入$event
+        默认事件：.prevent
+        键码事件：keyCode @keydown $event ev.keyCode
+            回车： @keyup.13 @keyup.enter
+            up: @keyup.left/@keyup.right/@keyup.up/@keyup.down
+
+vue-属性：
+    属性绑定：v-bind

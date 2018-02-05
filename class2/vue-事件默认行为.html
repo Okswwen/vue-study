@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <title>vue-事件基础</title>
+    <title>vue-事件默认行为</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta http-equiv="pragma" content="no-cache">
@@ -23,7 +23,32 @@
 
 </head>
 <body>
+<div id="box">
+    <div @click="show2()">
+        <input type="button" value="按钮" @contextmenu.stop.prevent="show()">
+    </div>
+    <a href="" target="_blank" @click.prevent="show3()">a标签的链接</a>
+</div>
 
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+
+        },
+        methods: {
+            show() {
+                alert('1');
+            },
+            show2() {
+                alert('2')
+            },
+            show3() {
+                alert('3')
+            }
+        }
+    })
+</script>
 </body>
 
 </html>
